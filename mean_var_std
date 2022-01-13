@@ -1,0 +1,8 @@
+import numpy as np
+
+def calculate(my_list):
+  try:
+    #if len(my_list) < 9:
+    #print("List must contain 9 numbers")
+    my_list = np.array(my_list)
+    my_list = my_list.reshape(3,3)
