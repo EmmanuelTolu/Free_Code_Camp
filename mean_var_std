@@ -6,3 +6,29 @@ def calculate(my_list):
     #print("List must contain 9 numbers")
     my_list = np.array(my_list)
     my_list = my_list.reshape(3,3)
+ my_dict = {
+            'mean': [my_list.mean(axis=0).tolist(), 
+                     my_list.mean(axis=1).tolist(), 
+                     my_list.mean().tolist()
+                    ],
+            'variance': [my_list.var(axis=0).tolist(),
+                         my_list.var(axis=1).tolist(),
+                         my_list.var().tolist()
+                         ],
+            'standard deviation':[my_list.std(axis=0).tolist(),
+                                  my_list.std(axis=1).tolist(),
+                                  my_list.std().tolist()
+                                 ],
+            'max': [my_list.max(axis=0).tolist(),
+                    my_list.max(axis=1).tolist(),
+                    my_list.max().tolist()
+                   ],
+            'min': [my_list.min(axis=0).tolist(),
+                    my_list.min(axis=1).tolist(),
+                    my_list.min().tolist()
+                   ],
+            'sum': [my_list.sum(axis=0).tolist(),
+                    my_list.sum(axis=1).tolist(),
+                    my_list.sum().tolist()
+                   ],
+               }
