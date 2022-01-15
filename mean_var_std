@@ -34,5 +34,4 @@ def calculate(my_list):
   except TypeError:
         print("List must contain 9 numbers") #Re-enter the list
         print("cannot reshape array of size 7 into shape (3,3)")
-    
-    return calculations
+  return calculations
