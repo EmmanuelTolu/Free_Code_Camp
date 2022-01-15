@@ -30,3 +30,9 @@ def calculate(my_list):
                     my_list.sum().tolist()
                    ],
                }
+    calculations = my_dict
+  except TypeError:
+        print("List must contain 9 numbers") #Re-enter the list
+        print("cannot reshape array of size 7 into shape (3,3)")
+    
+    return calculations
