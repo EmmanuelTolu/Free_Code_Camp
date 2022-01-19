@@ -1,7 +1,10 @@
 df = pd.read_csv("adult.data.csv")
+
 race_count = pd.Series.value_counts(df["race"])
+
 df_mine = df[df["sex"].str.contains("Female")==False]
 aam = df_mine["age"].mean()
 average_age_men = round(aam*10)/10
+
 pb = (df['education'].value_counts()['Bachelors']/df['education'].count()) * 100
 percentage_bachelors = round(pb*10)/10
