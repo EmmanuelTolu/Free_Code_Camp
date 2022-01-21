@@ -8,3 +8,11 @@ average_age_men = round(aam*10)/10
 
 pb = (df['education'].value_counts()['Bachelors']/df['education'].count()) * 100
 percentage_bachelors = round(pb*10)/10
+
+df_me = df[df["salary"].str.contains("<=50K")==False] #People who made more than 50K
+
+a = df_me['education'].value_counts()['Bachelors']
+b = df_me['education'].value_counts()['Masters']
+c = df_me['education'].value_counts()['Doctorate']
+high_ed = a + b + c
+
