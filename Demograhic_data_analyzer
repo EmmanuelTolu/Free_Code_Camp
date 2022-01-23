@@ -15,4 +15,11 @@ a = df_me['education'].value_counts()['Bachelors']
 b = df_me['education'].value_counts()['Masters']
 c = df_me['education'].value_counts()['Doctorate']
 high_ed = a + b + c
+d = df['education'].value_counts()['Bachelors']
+e = df['education'].value_counts()['Masters']
+f = df['education'].value_counts()['Doctorate']
+high_ed_tot = d + e + f
 
+lower_ed = df_me[df_me["education"].str.contains("Bachelors")==False]
+lower_ed = lower_ed[lower_ed["education"].str.contains("Masters")==False]
+lower_ed = lower_ed[lower_ed["education"].str.contains("Doctorate")==False] #earning >50K
