@@ -23,3 +23,13 @@ high_ed_tot = d + e + f
 lower_ed = df_me[df_me["education"].str.contains("Bachelors")==False]
 lower_ed = lower_ed[lower_ed["education"].str.contains("Masters")==False]
 lower_ed = lower_ed[lower_ed["education"].str.contains("Doctorate")==False] #earning >50K
+
+low_ed_tot = df[df["education"].str.contains("Bachelors")==False]
+low_ed_tot = low_ed_tot[low_ed_tot["education"].str.contains("Masters")==False]
+low_ed_tot = low_ed_tot[low_ed_tot["education"].str.contains("Doctorate")==False]
+
+her = (high_ed/ high_ed_tot) * 100
+higher_education_rich = round(her*10)/10
+ler = (lower_ed['education'].count()/low_ed_tot['education'].count()) * 100
+lower_education_rich = round(ler*10)/10
+
