@@ -49,4 +49,3 @@ df2 = df1['percentage'].max()
 hec = df1.index[df1['percentage'] == df1['percentage'].max()].tolist()
 highest_earning_country = hec[0]
 highest_earning_country_percentage = round(df2*10)/10
-
