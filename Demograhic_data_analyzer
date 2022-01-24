@@ -33,3 +33,10 @@ higher_education_rich = round(her*10)/10
 ler = (lower_ed['education'].count()/low_ed_tot['education'].count()) * 100
 lower_education_rich = round(ler*10)/10
 
+min_work_hours = df['hours-per-week'].min()
+
+num_min_workers = len(df_me[df_me['hours-per-week'].map(lambda x: x == min_work_hours)])
+num_min_workers_total = len(df[df['hours-per-week'].map(lambda x: x == min_work_hours)])
+rp = (num_min_workers/num_min_workers_total) * 100
+rich_percentage = round(rp*10)/10
+
