@@ -40,3 +40,13 @@ num_min_workers_total = len(df[df['hours-per-week'].map(lambda x: x == min_work_
 rp = (num_min_workers/num_min_workers_total) * 100
 rich_percentage = round(rp*10)/10
 
+df1 = pd.concat([df['native-country'], df_me['native-country']], axis=1, keys=['df', 'df_me'])
+me =  df.groupby('native-country')['native-country'].count()
+my =  df_me.groupby('native-country')['native-country'].count()
+df1 = pd.concat([me, my], axis=1, keys=['df', 'df_me'])
+df1['percentage'] = (df1['df_me']/df1['df'])*100
+df2 = df1['percentage'].max()
+hec = df1.index[df1['percentage'] == df1['percentage'].max()].tolist()
+highest_earning_country = hec[0]
+highest_earning_country_percentage = round(df2*10)/10
+
