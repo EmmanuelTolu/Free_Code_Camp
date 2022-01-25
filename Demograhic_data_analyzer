@@ -33,6 +33,7 @@ higher_education_rich = round(her*10)/10
 ler = (lower_ed['education'].count()/low_ed_tot['education'].count()) * 100
 lower_education_rich = round(ler*10)/10
 
+
 min_work_hours = df['hours-per-week'].min()
 
 num_min_workers = len(df_me[df_me['hours-per-week'].map(lambda x: x == min_work_hours)])
@@ -49,3 +50,6 @@ df2 = df1['percentage'].max()
 hec = df1.index[df1['percentage'] == df1['percentage'].max()].tolist()
 highest_earning_country = hec[0]
 highest_earning_country_percentage = round(df2*10)/10
+
+fg = df_me[df_me["native-country"].str.contains("India")==True]
+top_IN_occupation = fg['occupation'].value_counts().idxmax()
